@@ -3,7 +3,7 @@ module "test_service_sg" {
 
   name        = "test-sg-service"
   description = "Security group for user-service with custom ports open within VPC, and PostgreSQL publicly open"
-  vpc_id      = module.vpc_id
+  vpc_id      = vpc.vpc_id
 
   ingress_with_cidr_blocks = [
     {
