@@ -3,7 +3,7 @@ module "test_service_sg" {
 
   name        = "test-sg-service"
   description = "Security group for user-service with custom ports open within VPC, and PostgreSQL publicly open"
-  vpc_id      = vpc.vpc_id
+  vpc_id      = module.vpc.vpc_id
 
   ingress_with_cidr_blocks = [
     {
@@ -14,4 +14,15 @@ module "test_service_sg" {
       cidr_blocks = "0.0.0.0/0" 
     }
   ]
+   egress_with_cidr_blocks = [ {
+    from_port        = 0
+    to_port          = 0    
+    protocol         = "-1"
+    cidr_blocks      = ["0.0.0.0/0"]
+    ipv6_cidr_blocks = ["::/0"]
+  }
+   ]
+  tags = {
+    Name = "ani_allow_ssg"
+  }
 }
