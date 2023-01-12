@@ -32,7 +32,7 @@ module "db" {
 
   # DB subnet group
   create_db_subnet_group = true
-  subnet_ids             = [module.vpc.private_subnets[0]]
+  subnet_ids             = [module.vpc.private_subnets[0],module.vpc.private_subnets[1]]
 
   # DB parameter group
   family = "mysql5.7"
