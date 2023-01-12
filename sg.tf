@@ -12,13 +12,6 @@ module "test_service_sg" {
       protocol    = "tcp"
       description = "ssh"
       cidr_blocks = "0.0.0.0/0" 
-    },
-     {
-      from_port   = 3306
-      to_port     = 3306
-      protocol    = "tcp"
-      description = "rds"
-      cidr_blocks = [module.test_service_sg.security_group_id]
     }
   ]
    
