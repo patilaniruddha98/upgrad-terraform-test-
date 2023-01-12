@@ -12,7 +12,7 @@ module "db" {
   username = "user"
   port     = "3306"
   create_random_password = false
-  password = "user"
+  password = "useruser"
 
   iam_database_authentication_enabled = true
 
